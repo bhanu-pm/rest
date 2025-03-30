@@ -30,7 +30,7 @@ def division(request: RequestStructure):
 		result = request.num1 / request.num2
 		return {"num1": request.num1, "num2": request.num2, "result": result}
 
-	raise Exception("Divide by 0 error")
+	raise HTTPException(status_code=400, detail="Divide by 0 error")
 
 if __name__ == "__main__":
 	pass
